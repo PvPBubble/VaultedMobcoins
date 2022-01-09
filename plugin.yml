@@ -1,0 +1,12 @@
+name: VaultedMobCoins
+version: 1.0
+main: com.benzimmer123.mobcoins.MobCoins
+authors: [benzimmer123]
+softdepend: [Outpost, PlaceholderAPI]
+commands:
+  mobcoins:
+    description: All commands for the mobcoins plugin.
+  coins:
+    description: All commands for the mobcoins plugin.
+  transfer:
+    description: All commands for the mobcoins plugin.

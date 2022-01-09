@@ -1,0 +1,389 @@
+license: ''
+
+#VaultedMobcoins, made for iiEnderr
+Options:
+  drop: PHYSICAL #this determines whether mobcoins are given as a physical item which can be redeemed into your virtual balance, or VIRTUAL which would automatically put it in your balance.
+  ItemToken:
+    material: DOUBLE_PLANT
+    name: "&e&lMob Coin &7(Right Click!)"
+    enchanted: false
+    lore:
+      - '&7Right click to deposit this Mob Coin.'
+  Sound:
+    mainMenuOpen:
+      enabled: true
+      name: BAT_TAKEOFF
+      volume: 1.0
+      pitch: 0.5
+    sectionMenuOpen:
+      enabled: true
+      name: LEVEL_UP
+      volume: 1.0
+      pitch: 1.5
+    sectionMenuClose:
+      enabled: true
+      name: CHICKEN_EGG_POP
+      volume: 1.0
+      pitch: 1.5
+    addCoins:
+      enabled: true
+      name: FIREWORK_TWINKLE
+      volume: 1.0
+      pitch: 1.5
+    withdrawCoins:
+      enabled: true
+      name: FIREWORK_BLAST
+      volume: 1.0
+      pitch: 1.5
+    successfulPurchase:
+      enabled: true
+      name: LEVEL_UP
+      volume: 1.0
+      pitch: 0.5
+    failedPurchase:
+      enabled: true
+      name: ANVIL_LAND
+      volume: 1.0
+      pitch: 1.5
+    alreadyDisplayingCategory:
+      enabled: true
+      name: ANVIL_LAND
+      volume: 1.0
+      pitch: 1.5
+  StatusItems:
+    delay: 2 # Delay in seconds until old items appear
+    alreadyDisplayingShop:
+      material: BARRIER
+      name: "&c&lERROR"
+      lore:
+        - "&7You are already viewing this category."
+    notEnoughCoins:
+      material: BARRIER
+      name: "&c&lERROR"
+      lore:
+        - "&7You do not have enough coins for this item!"
+MainMenu:
+  size: 36
+  title: "MobCoins &l&r» Transfer"
+  Items:
+    placeholders:
+      black:
+        material: STAINED_GLASS_PANE
+        data: 15
+        slots: [0,1,2,6,7,8,9,11,15,17,18,19,20,24,25,26]
+        name: '&7 '
+        lore:
+        - '&7 '
+      grey:
+        material: STAINED_GLASS_PANE
+        data: 7
+        slots: [3,4,5,12,13,14,21,22,23,28,29,30,31,32,33,34]
+        name: '&7 '
+        lore:
+        - '&7 '
+    Balance:
+      slot: 27
+      material: DOUBLE_PLANT
+      skullOwner: ''
+      data: 0
+      name: '&e&l[!] &eYou have &6&n☀%mobcoins_balance%&e Mob Coins.'
+      enchanted: false
+      lore:
+        - '&7Mob Coins can be used in the Transfer Menu'
+        - '&7to purchase epic perks, items, and more...'
+    Info:
+      slot: 35
+      material: BOOK
+      name: '&e&lMob Coins Info'
+      skullOwner: ''
+      data: 0
+      enchanted: false
+      amount: 1
+      lore:
+        - '&7Mob Coins are earned by killing'
+        - '&7mobs. Certain mobs have a higher'
+        - '&7chance to drop Mob Coins.'
+        - ''
+        - '&7Items purchased with Mob Coins'
+        - '&7are not permanent. They only'
+        - '&7last for the current map!'
+        - ''
+        - '&e&lDrop Chances'
+        - ' &6&l* &ePassive Mobs &f5%'
+        - ' &6&l* &eHostile Mobs &f10%'
+    CategoryItems:
+      normal:
+        slot: 11
+        material: CHEST
+        name: '&6&lStatic &e&lMobcoin Shop'
+        skullOwner: ''
+        data: 0
+        enchanted: true
+        lore:
+          - ''
+          - ' &7&o"This shop does not refresh, all rewards displayed'
+          - ' &7&oin this shop are permanent and can be purchased at any time."'
+          - ''
+          - '&7&o(( &f&oClick &7&oto preview the &6&oRegular &aMob shop&7&o. ))'
+      special:
+        slot: 15
+        material: ENDER_CHEST
+        data: 0
+        name: '&2&lLimited &a&lMobcoin Shop'
+        skullOwner: ''
+        enchanted: true
+        lore:
+          - ''
+          - ' &7&o"This shop refreshed with different rewards every day"'
+          - ''
+          - ' &2&l*&r &aTime Remaining &f%mobcoins_time_limited%'
+          - ''
+          - '&7&o(( &f&oClick &7&oto preview the &6&lRotating &e&lShop&7&o. ))'
+
+BackButton:    
+  material: WOODEN_DOOR
+  enchanted: false
+  data: 0
+  name: '&eGo Back'
+  lore:
+  - '&7Click to go back.'
+          
+Switch:
+  normal:
+    material: CLOCK
+    enchanted: false
+    data: 0
+    name: '&e&lNormal Shop'
+    skullOwner: ''
+    lore:
+      - ''
+      - ' &7&o"This shop does not refresh, all rewards displayed'
+      - ' &7&oin this shop are permanent and can be purchased at any time."'
+      - ''
+      - '&7&o(( &f&oClick &7&oto preview the &6&oStatic &aMob shop&7&o. ))'
+    slot: 29
+  special:
+    material: CLOCK
+    enchanted: false
+    data: 0
+    name: '&e&lSpecial Shop'
+    skullOwner: ''
+    lore:
+      - ''
+      - ' &7&o"This shop refreshed with different rewards every day"'
+      - ''
+      - '&7&o(( &f&oClick &7&oto preview the &6&lRotating &e&lShop&7&o. ))'
+    slot: 33
+    
+Pages:
+  NextPage:
+    material: ARROW
+    enchanted: false
+    data: 0
+    name: '&eNext Page'
+    lore:
+    - '&7Click to view the next page.'
+  PreviousPage:
+    material: ARROW
+    enchanted: false
+    data: 0
+    name: '&ePrevious Page'
+    lore:
+    - '&7Click to view the previous page.'
+          
+Categories:
+  #You can create as many categories as you want...
+  #Placeholder: %mobcoins_time_<category>%
+  normal:
+    title: 'Normal Category'
+    size: 36
+    BackSlots: [4]
+    PageSlots: # Leave these blank if you only want one page
+      Next: []
+      Previous: []
+    slots: 
+      pages:
+        1: [12, 13, 14, 21, 22, 23] #How many items are in the category and slots.
+    interval: 86400 # Seconds
+    placeholders:
+      black:
+        material: STAINED_GLASS_PANE
+        data: 15
+        slots: [0,1,2,6,7,8,9,10,11,15,16,17,18,19,20,24,25,26,27,28,29,33,34,35]
+        name: '&7 '
+        lore:
+        - '&7 '
+      grey:
+        material: STAINED_GLASS_PANE
+        data: 7
+        slots: [3,4,5,12,14,21,22,23,30,31,32]
+        name: '&7 '
+        lore:
+        - '&7 '    
+    Items:
+      1:
+        material: CHEST
+        enchanted: false
+        data: 0
+        skullOwner: ''
+        name: '&e&lNormal Item 1'
+        lore:
+        - '&ePrice: %price%'
+        amount: 1
+        price: 25
+        commands:
+          - 'give %player% dirt 1'
+  special:
+    title: 'Special Category'
+    size: 36
+    BackSlots: [4]
+    PageSlots: # Leave these blank if you only want one page
+      Next: []
+      Previous: []
+    slots:
+      pages:
+        1: [13, 22] #How many items are in the category and slots.
+    interval: 172800
+    placeholders:
+      black:
+        material: STAINED_GLASS_PANE
+        data: 15
+        slots: [0,1,2,6,7,8,9,10,11,15,16,17,18,19,20,24,25,26,27,28,29,33,34,35]
+        name: '&7 '
+        lore:
+        - '&7 '
+      grey:
+        material: STAINED_GLASS_PANE
+        data: 7
+        slots: [3,4,5,12,14,21,22,23,30,31,32]
+        name: '&7 '
+        lore:
+        - '&7 '
+    Items:
+      1:
+        material: ENDER_CHEST
+        enchanted: false
+        skullOwner: ''
+        data: 0
+        name: '&e&lSpecial Item 1'
+        lore:
+        - '&ePrice: %price%'
+        amount: 1
+        price: 25
+        commands: []
+      2:
+        material: ENDER_CHEST
+        enchanted: false
+        skullOwner: ''
+        data: 0
+        name: '&a&lSpecial Item 2'
+        lore:
+        - '&ePrice: %price%'
+        amount: 1
+        price: 25
+        commands: []
+      3:
+        material: ENDER_CHEST
+        enchanted: false
+        skullOwner: ''
+        data: 0
+        name: '&c&lSpecial Item 3'
+        lore:
+        - '&ePrice: %price%'
+        amount: 1
+        price: 25
+        commands: []
+      4:
+        material: ENDER_CHEST
+        enchanted: false
+        skullOwner: ''
+        data: 0
+        name: '&6&lSpecial Item 4'
+        lore:
+        - '&ePrice: %price%'
+        amount: 1
+        price: 25
+        commands: []
+Mobs:
+  SKELETON: 
+    CHANCE: 5
+    MIN_DROPS: 1
+    MAX_DROPS: 3
+  ZOMBIE: 
+    CHANCE: 5
+    MIN_DROPS: 1
+    MAX_DROPS: 3
+  BLAZE: 
+    CHANCE: 5
+    MIN_DROPS: 1
+    MAX_DROPS: 3
+  CREEPER: 
+    CHANCE: 8
+    MIN_DROPS: 1
+    MAX_DROPS: 3
+  ENDERMAN: 
+    CHANCE: 8
+    MIN_DROPS: 1
+    MAX_DROPS: 3
+  WITHER:
+    CHANCE: 50
+    MIN_DROPS: 1
+    MAX_DROPS: 3
+
+Top_sort_delay: 300
+
+Category_refresh_task: 5
+
+MaxBalance: -1 # Set this to -1 for no maximum balance
+
+DuplicateItems: false # Allow duplicate items selected
+
+MobDrops:
+  Min: 1
+  Max: 3
+  
+DropOptions:
+  FALL: true
+  SUFFOCATION: true
+  LAVA: true
+  FIRE: true
+  DROWNING: true
+  ENTITY_ATTACK: true # Killed by player
+  WITHER: true
+  MAGIC: true
+  OTHER: false
+  
+disabled_worlds: # These should be in lowercase
+  - "disabledworld"
+
+outpost_multipliers:
+  mobdrops:
+    example_name: 2.0
+  pricedrop:
+    example_name: 0.5 # 50% off original price
+
+MOBCOINS_HELP_LORE:
+  - '&8&m---------------------------'
+  - '&e&l[!] Mobcoins Commands:'
+  - '&e/mobcoins withdraw <amount>'
+  - '&e/mobcoins deposit <amount>'
+  - '&e/mobcoins pay <player> <amount>'
+  - '&e/mobcoins viewcoins <player>'
+  - '&e/mobcoins top' #shows top balances
+  - '&8&m---------------------------'
+MOBCOINS_HELP_ADMIN_LORE:
+  - '&8&m---------------------------'
+  - '&6&l(!) Mobcoins Commands:'
+  - '&e/mobcoins withdraw <amount>' #withdraw from virtual balance and gives you physical mobcoin
+  - '&e/mobcoins deposit <amount>'
+  - '&e/mobcoins pay <player> <amount>'
+  - '&e/mobcoins viewcoins <player>'
+  - ''
+  - '&6&l(!) Admin Commands:'
+  - '&e/mobcoins give <player> <amount> [-s]'
+  - '&e/mobcoins take <player> <amount>'
+  - '&e/mobcoins set <player> <amount>'
+  - '&e/mobcoins giveitem <player> <amount>'
+  - '&e/mobcoins refresh <category>'
+  - '&e/mobcoins reload'
+  - '&8&m---------------------------'
